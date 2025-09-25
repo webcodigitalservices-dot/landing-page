@@ -1,17 +1,51 @@
-// Wait until the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-  // Find all legal toggle elements
-  const toggles = document.querySelectorAll('.legal-toggle');
+<script>
+  // Toggle Privacy Section
+  function togglePrivacy() {
+    const content = document.getElementById('privacyContent');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', function () {
-      const targetId = this.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
+  // Toggle Terms Section
+  function toggleTerms() {
+    const content = document.getElementById('termsContent');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
 
-      if (!targetContent) return;
+  // Smooth scroll to form when CTA is clicked
+  document.addEventListener("DOMContentLoaded", function () {
+    const ctaButton = document.querySelector('.cta-button');
+    const formSection = document.querySelector('#contact-form');
 
-      const isVisible = targetContent.style.display === 'block';
-      targetContent.style.display = isVisible ? 'none' : 'block';
-    });
-  });
-});
+    if (ctaButton && formSection) {
+      ctaButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+
+  // Optional: Auto-close one toggle if the other is opened
+  function closeOtherToggle(openId) {
+    const toggles = ['privacyContent', 'termsContent'];
+    toggles.forEach(id => {
+      if (id !== openId) {
+        document.getElementById(id).style.display = 'none';
+      }
+    });
+  }
+
+  function togglePrivacy() {
+    const content = document.getElementById('privacyContent');
+    const isVisible = content.style.display === 'block';
+    closeOtherToggle('privacyContent');
+    content.style.display = isVisible ? 'none' : 'block';
+  }
+
+  function toggleTerms() {
+    const content = document.getElementById('termsContent');
+    const isVisible = content.style.display === 'block';
+    closeOtherToggle('termsContent');
+    content.style.display = isVisible ? 'none' : 'block';
+  }
+</script>
+
