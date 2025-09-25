@@ -68,19 +68,39 @@
   </div>
 </div>
 
-<!-- Text-based Terms & Conditions -->
-<div class="toggle-section">
-  <p class="toggle-link" onclick="toggleTerms()">Terms & Conditions</p>
-  <div id="termsContent" class="toggle-content">
+<!-- Start of Toggle Section -->
+<div class="legal-section">
+
+  <!-- Privacy Policy Toggle -->
+  <p class="legal-toggle" onclick="toggleSection('privacyContent', this)">
+    Privacy Policy
+  </p>
+  <div id="privacyContent" class="legal-content">
     <p>
-      <strong>Payment Terms:</strong> For all projects, a 50% upfront payment is required before work begins. The remaining 50% is due upon completion and final delivery of the project or service. This ensures a smooth workflow and mutual commitment throughout the project.
+      We respect your privacy. All data submitted through this site is kept secure and confidential. 
+      We do not sell, share, or misuse your personal information in any way. Any information you provide 
+      is used solely to deliver the services you requested.
+    </p>
+  </div>
+
+  <!-- Terms & Conditions Toggle -->
+  <p class="legal-toggle" onclick="toggleSection('termsContent', this)">
+    Terms & Conditions
+  </p>
+  <div id="termsContent" class="legal-content">
+    <p>
+      <strong>Payment Terms:</strong> For all projects, a 50% upfront payment is required before work begins. 
+      The remaining 50% is due upon completion and final delivery of the project or service. 
     </p>
     <p>
-      <strong>Content Policy:</strong> Please note that we do not accept projects that include or require the use of images featuring women. This is a non-negotiable policy based on our internal guidelines, and we appreciate your understanding and respect for this boundary.
+      <strong>Content Policy:</strong> Please note that we do not accept projects that include or require 
+      the use of images featuring women. This is a non-negotiable policy based on our internal guidelines, 
+      and we appreciate your understanding and respect for this boundary.
     </p>
   </div>
+
 </div>
-  <script>
+    <script>
     function togglePrivacy() {
       const text = document.getElementById('privacy-text');
       text.style.display = text.style.display === 'block' ? 'none' : 'block';
