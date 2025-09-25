@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Webco | Landing Pages That Convert</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Simple toggle CSS */
+    .toggle-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .toggle-link {
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -47,66 +59,56 @@
   <section class="section" id="contact-form">
     <h2>Let's Work Together</h2>
     <form class="vertical-form" action="https://submit-form.com/z5OzmKljy">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="request" placeholder="Describe your request" required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="request" placeholder="Describe your request" required></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
 
-      
-
-  <!-- Text-based Privacy Policy -->
-<div class="toggle-section">
-  <p class="toggle-link" onclick="togglePrivacy()">Privacy Policy</p>
-  <div id="privacyContent" class="toggle-content">
-    <p>
-      We respect your privacy. All data submitted through this site is kept secure and confidential. 
-      We do not sell, share, or misuse your personal information in any way. Any information you provide 
-      is used solely to deliver the services you requested.
-    </p>
-  </div>
-</div>
-
-<!-- Start of Toggle Section -->
-<div class="legal-section">
-
   <!-- Privacy Policy Toggle -->
-  <p class="legal-toggle" onclick="toggleSection('privacyContent', this)">
-    Privacy Policy
-  </p>
-  <div id="privacyContent" class="legal-content">
-    <p>
-      We respect your privacy. All data submitted through this site is kept secure and confidential. 
-      We do not sell, share, or misuse your personal information in any way. Any information you provide 
-      is used solely to deliver the services you requested.
-    </p>
+  <div class="toggle-section">
+    <p class="toggle-link" onclick="togglePrivacy()">Privacy Policy</p>
+    <div id="privacyContent" class="toggle-content">
+      <p>
+        We respect your privacy. All data submitted through this site is kept secure and confidential. 
+        We do not sell, share, or misuse your personal information in any way. Any information you provide 
+        is used solely to deliver the services you requested.
+      </p>
+    </div>
   </div>
 
   <!-- Terms & Conditions Toggle -->
-  <p class="legal-toggle" onclick="toggleSection('termsContent', this)">
-    Terms & Conditions
-  </p>
-  <div id="termsContent" class="legal-content">
-    <p>
-      <strong>Payment Terms:</strong> For all projects, a 50% upfront payment is required before work begins. 
-      The remaining 50% is due upon completion and final delivery of the project or service. 
-    </p>
-    <p>
-      <strong>Content Policy:</strong> Please note that we do not accept projects that include or require 
-      the use of images featuring women. This is a non-negotiable policy based on our internal guidelines, 
-      and we appreciate your understanding and respect for this boundary.
-    </p>
-  </div>
+  <div class="toggle-section">
+    <p class="toggle-link" onclick="toggleTerms()">Terms & Conditions</p>
+    <div id="termsContent" class="toggle-content">
+      <p>
+        <strong>Payment Terms:</strong> For all projects, a 50% upfront payment is required before work begins. 
+        The remaining 50% is due upon completion and final delivery of the project or service. This ensures a 
+        smooth workflow and mutual commitment throughout the project.
+      </p>
+      <p>
+        <strong>Content Policy:</strong> Please note that we do not accept projects that include or require the 
+        use of images featuring women. This is a non-negotiable policy based on our internal guidelines, and 
+        we appreciate your understanding and respect for this boundary.
+      </p>
+    </div>
+  </div>
 
-</div>
-    <script>
+  <!-- Toggle Script -->
+  <script>
     function togglePrivacy() {
-      const text = document.getElementById('privacy-text');
-      text.style.display = text.style.display === 'block' ? 'none' : 'block';
+      const content = document.getElementById('privacyContent');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleTerms() {
+      const content = document.getElementById('termsContent');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 
 </body>
 </html>
+
 
