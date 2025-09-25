@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light-yellow);
   color: var(--dark-blue);
   line-height: 1.6;
@@ -37,11 +37,11 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.hero-content .subheadline {
+.subheadline {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
@@ -84,17 +84,16 @@ body {
 .section h2 {
   color: var(--orange);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 ul.bullets {
   list-style-type: disc;
   padding-left: 1.5rem;
   font-size: 1rem;
-  color: var(--dark-blue);
 }
 
-/* Form */
+/* Form Section */
 .vertical-form {
   background-color: #fff;
   padding: 1.5rem;
@@ -107,16 +106,14 @@ ul.bullets {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.vertical-form label {
-  font-weight: bold;
-}
-
 .vertical-form input,
 .vertical-form textarea {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
 }
 
 .vertical-form button {
@@ -127,36 +124,36 @@ ul.bullets {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .vertical-form button:hover {
   background-color: #a31c1c;
 }
 
-/* Container for both sections */
-.legal-section {
+/* Toggle Sections */
+.toggle-section {
   max-width: 800px;
-  margin: 2rem auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.95rem;
+  margin: 1rem auto;
 }
 
-/* Clickable link-style toggles */
-.legal-toggle {
+.toggle-link {
   color: #007BFF;
   cursor: pointer;
-  text-decoration: underline;
   font-weight: 500;
-  margin: 1rem 0 0.5rem;
+  text-decoration: underline;
+  margin: 1rem 0;
+  display: inline-block;
 }
 
-/* Hidden by default */
-.legal-content {
+.toggle-content {
   display: none;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.6;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
@@ -176,3 +173,4 @@ ul.bullets {
     max-width: 90%;
   }
 }
+
